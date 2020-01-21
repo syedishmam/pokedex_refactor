@@ -5,7 +5,9 @@ import Profile from './pokemon_profile/Profile';
 class App extends React.Component {
     render() {
         return (
-            <Profile />
+            <div >
+                <Profile />
+            </div>
         )
     }
 }

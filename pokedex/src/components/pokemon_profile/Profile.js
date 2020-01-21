@@ -5,7 +5,7 @@ import './styles/Profile.css';
 class Profile extends React.Component {
     render() {
         return (
-            <div className='profileContianer'>
+            <div className="profileContainer">
                 <p>Profile</p>
             </div>
         )
