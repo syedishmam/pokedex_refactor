@@ -13,6 +13,7 @@ class NamePlate extends React.Component {
                     <Cell />
                     <Cell />
                 </div>
+                <img id="pokemonSprite" src="https://via.placeholder.com/200" alt="Pokemon Image" />
             </div>
         )
     }

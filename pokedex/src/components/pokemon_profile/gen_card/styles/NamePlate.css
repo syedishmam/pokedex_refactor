@@ -1,6 +1,8 @@
+/* Class Styles */
+
 .namePlateContainer {
     border: solid 1px black;
-    margin-top: 40px;
+    margin-top: 65px;
     height: 25%;
 }
 
@@ -12,4 +14,14 @@
 .cells {
     position: relative;
     bottom: 30px;
+}
+
+/* ID Styles */
+
+#pokemonSprite {
+    position: absolute;
+    top: 175px;
+    left: 0;
+    right: 0;
+    margin: auto;
 }
