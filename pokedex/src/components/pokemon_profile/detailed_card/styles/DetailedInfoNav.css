@@ -1,0 +1,13 @@
+/* Class Styles */ 
+
+ .detailedInfoNavButton {
+     margin: 0 5px 0 10px;
+ }
+
+/* ID Styles */
+
+#detailedInfoNavBarContainer {
+    margin-top: 25px;
+    text-align: center;
+}
+
