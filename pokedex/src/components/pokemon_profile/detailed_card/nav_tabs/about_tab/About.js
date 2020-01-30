@@ -6,13 +6,22 @@ import Measurements from './Measurements.js';
 import './styles/About.css';
 
 class About extends React.Component {
-    render() {
+
+    renderAbout() {
         return (
             <div id="aboutContainer">
                 <PokemonDescription />
                 <Measurements />
             </div>
         )
+    }
+
+    render() {
+        return (
+            <div>
+                {this.renderAbout()}
+            </div>
+        ) 
     }
 }
 
