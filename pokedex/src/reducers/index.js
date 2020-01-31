@@ -1,7 +1,7 @@
 import {combineReducers} from 'redux';
 
-import displayAboutReducer from './displayAboutReducer.js';
+import displayInfoReducer from './displayInfoReducer.js';
 
 export default combineReducers({
-    infoShown: displayAboutReducer
+    infoShown: displayInfoReducer
 });
