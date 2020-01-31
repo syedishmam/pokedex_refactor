@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {displayAbout, displayBaseStats} from '../../../actions';
+import {displayAbout, displayBaseStats} from '../../../../actions';
 import './styles/DetailedInfoNav.css';
 
 class DetailedInfoNav extends React.Component {

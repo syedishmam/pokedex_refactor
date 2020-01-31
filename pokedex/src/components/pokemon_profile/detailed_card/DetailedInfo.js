@@ -1,6 +1,6 @@
 import React from 'react';
 
-import DetailedInfoNav from './DetailedInfoNav.js';
+import DetailedInfoNav from './nav_tabs/DetailedInfoNav.js';
 import About from './nav_tabs/about_tab/About.js'
 
 import './styles/DetailedInfo.css';
