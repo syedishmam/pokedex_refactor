@@ -1,7 +1,7 @@
 import React from 'react';
 
 import DetailedInfoNav from './nav_tabs/DetailedInfoNav.js';
-import About from './nav_tabs/about_tab/About.js'
+import DetailedInfoTab from './nav_tabs/DetailedInfoTab.js';
 
 import './styles/DetailedInfo.css';
 
@@ -10,7 +10,7 @@ class DetailedInfo extends React.Component {
         return (
             <div id="detailedInfoContainer">
                 <DetailedInfoNav />
-                <About />
+                <DetailedInfoTab />
             </div>
         )
     }
