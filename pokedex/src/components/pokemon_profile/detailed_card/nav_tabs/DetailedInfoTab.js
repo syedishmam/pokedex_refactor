@@ -17,6 +17,14 @@ class DetailedInfoTab extends React.Component {
             return (
                 <BaseStats />
             )
+        } else if(this.props.infoShown === 'evolution') {
+            return (
+                <p>evolution</p>
+            )
+        } else if(this.props.infoShown === 'moves') {
+            return (
+                <p>moves</p>
+            )
         }
     }
 

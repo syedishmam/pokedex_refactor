@@ -6,6 +6,12 @@ export default (state = {infoShown: 'about'}, action) => {
         case 'DISPLAY_BASE_STATS':
             return {...state, infoShown: action.payload}
 
+        case 'DISPLAY_EVOLUTION':
+            return {...state, infoShown: action.payload}
+
+        case 'DISPLAY_MOVES':
+            return {...state, infoShown: action.payload}
+
         default:
             return state    
     }

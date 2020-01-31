@@ -1,13 +1,27 @@
-export const displayAbout = (boolean) => {
+export const displayAbout = (type) => {
     return {
         type: 'DISPLAY_ABOUT',
-        payload: boolean
+        payload: type
     }
 }
 
-export const displayBaseStats = (boolean) => {
+export const displayBaseStats = (type) => {
     return {
         type: 'DISPLAY_BASE_STATS',
-        payload: boolean
+        payload: type
+    }
+}
+
+export const displayEvolution = (type) => {
+    return {
+        type: 'DISPLAY_EVOLUTION',
+        payload: type
+    }
+}
+
+export const displayMoves = (type) => {
+    return {
+        type: 'DISPLAY_MOVES',
+        payload: type
     }
 }
