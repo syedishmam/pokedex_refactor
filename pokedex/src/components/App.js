@@ -3,6 +3,7 @@ import {Router, Route, Switch} from 'react-router-dom';
 import History from '../history.js';
 
 import Profile from './pokemon_profile/Profile';
+import Search from './search/Search.js';
 
 class App extends React.Component {
     render() {
@@ -10,10 +11,11 @@ class App extends React.Component {
 
             <Router history={History}>
                 <Switch>
-                    <Route path="/search"/>
+                    <Route path="/search" component={Search}/>
                     <Route path="/profile" component={Profile}/>
                 </Switch>
             </Router>
+            
         )
     }
 }
