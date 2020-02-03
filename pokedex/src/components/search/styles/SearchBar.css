@@ -1,0 +1,14 @@
+/* ID Styles */
+
+#searchBarContainer {
+    margin: 20px 5px;
+    text-align: center;
+}
+
+#searchTextField {
+    width: 284px;
+}
+
+#searchButton {
+    width: 75px;
+}

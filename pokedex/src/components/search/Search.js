@@ -1,6 +1,7 @@
 import React from 'react';
 
 import SearchBar from './SearchBar.js';
+import SearchResult from './SearchResult.js';
 import pokeApi from '../../api/pokeApi.js';
 
 class Search extends React.Component {
@@ -27,6 +28,7 @@ class Search extends React.Component {
         return(
             <div>
                 <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
+                <SearchResult />
             </div>
         )
     }
