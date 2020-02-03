@@ -1,8 +1,13 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import SearchBar from './SearchBar.js';
 import SearchResult from './SearchResult.js';
 import pokeApi from '../../api/pokeApi.js';
+
+import {storePokemonData} from '../../actions';
+
+import './styles/Search.css';
 
 class Search extends React.Component {
 
@@ -10,6 +15,7 @@ class Search extends React.Component {
 
     fetchPokemon = async (pokemon) => {
         const response = await pokeApi.get('pokemon/' + pokemon)
+        this.props.storePokemonData(response.data);
         console.log(response.data);
     }
 
@@ -26,12 +32,16 @@ class Search extends React.Component {
 
     render() {
         return(
-            <div>
+            <div id="searchContainer">
                 <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
-                <SearchResult />
+                <SearchResult search={this.props.pokemonData} />
             </div>
         )
     }
 }
 
-export default Search;
+const mapStateToProps = (state) => {
+    return {pokemonData: state.pokemonData.data}
+}
+
+export default connect(mapStateToProps, {storePokemonData})(Search);

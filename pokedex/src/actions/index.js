@@ -1,3 +1,7 @@
+/* --- Pokemon Profile Actions --- */
+
+/* Pokemon Profile Info Tabs */
+
 export const displayAbout = (type) => {
     return {
         type: 'DISPLAY_ABOUT',
@@ -23,5 +27,14 @@ export const displayMoves = (type) => {
     return {
         type: 'DISPLAY_MOVES',
         payload: type
+    }
+}
+
+/* --- Search Actions --- */
+
+export const storePokemonData = (data) => {
+    return {
+        type: 'STORE_POKEMON_DATA',
+        payload: data
     }
 }
