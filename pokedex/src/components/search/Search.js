@@ -1,5 +1,6 @@
 import React from 'react';
 
+import SearchBar from './SearchBar.js';
 import pokeApi from '../../api/pokeApi.js';
 
 class Search extends React.Component {
@@ -8,7 +9,7 @@ class Search extends React.Component {
 
     fetchPokemon = async (pokemon) => {
         const response = await pokeApi.get('pokemon/' + pokemon)
-        console.log(response.data.species);
+        console.log(response.data);
     }
 
     onEnterKeyPress = (event) => {
@@ -25,8 +26,7 @@ class Search extends React.Component {
     render() {
         return(
             <div>
-                <input type="text" value={this.state.searchQuery} onChange={this.updateSearchQuery} onKeyPress={this.onEnterKeyPress}/>
-                <button onClick={() => this.fetchPokemon(this.state.searchQuery)}>Submit</button>
+                <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
             </div>
         )
     }
