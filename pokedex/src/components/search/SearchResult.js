@@ -4,7 +4,7 @@ class SearchResult extends React.Component {
     render() {
         return (
             <div>
-                <p>Search Result</p>
+                <img src={this.props.search.sprites.front_default} alt="pokemon sprite" />
             </div>
         )
     }

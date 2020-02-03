@@ -30,11 +30,25 @@ class Search extends React.Component {
         console.log(this.state.searchQuery);
     }
 
+    renderSearchContent() {
+        if(this.props.pokemonData) {
+            return (
+                <div>
+                    <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
+                    <SearchResult search={this.props.pokemonData} />
+                </div>
+            )
+        } else {
+            return (
+                <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
+            )
+        }
+    }
+
     render() {
         return(
             <div id="searchContainer">
-                <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
-                <SearchResult search={this.props.pokemonData} />
+                {this.renderSearchContent()}
             </div>
         )
     }
