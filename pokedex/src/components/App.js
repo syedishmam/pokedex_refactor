@@ -12,7 +12,7 @@ class App extends React.Component {
             <Router history={History}>
                 <Switch>
                     <Route path="/search" component={Search}/>
-                    <Route path="/profile" component={Profile}/>
+                    <Route path="/profile/:pokemonName" component={Profile}/>
                 </Switch>
             </Router>
             

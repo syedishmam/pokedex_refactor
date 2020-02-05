@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import GenInfo from './gen_card/GenInfoContainer.js';
 
@@ -16,4 +17,4 @@ class Profile extends React.Component {
     }
 }
 
-export default Profile;
+export default connect()(Profile);
