@@ -6,8 +6,8 @@ import './styles/SearchResult.css';
 
 class SearchResult extends React.Component {
 
-    capitalizePokemonName(pokemon) {
-        const capitalize = this.props.search.species.name.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
+    capitalizeFirstChar(pokemon) {
+        const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
         return capitalize;
     }
 
@@ -15,7 +15,8 @@ class SearchResult extends React.Component {
     renderTypes() {
         const pokemonTypesArray = [];
         for(let i = 0; i < this.props.pokemonTypes.length; i++) {
-            pokemonTypesArray.push(this.props.pokemonTypes[i].type.name);
+            const currentPokemonType = this.props.pokemonTypes[i].type.name;
+            pokemonTypesArray.push(this.capitalizeFirstChar(currentPokemonType));
         }
         if(pokemonTypesArray.length === 2) {
             return (
@@ -36,7 +37,7 @@ class SearchResult extends React.Component {
             <Link to={`/profile/${this.props.pokemonName}`} id="searchResultContainer">
                 <img id="pokemonImage" src={this.props.search.sprites.front_default} alt="pokemon sprite" />
                 <div id="infoCard">
-                    <h3 id="pokemonName">{this.capitalizePokemonName(this.props.search.species.name)}</h3>
+                    <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
                 </div>
             </Link>

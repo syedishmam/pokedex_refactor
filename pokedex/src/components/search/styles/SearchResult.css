@@ -14,6 +14,7 @@
     width: 350px;
     text-decoration: none;
     background-color: lightskyblue;
+    color: black;
 }
 
 #pokemonImage {
@@ -25,12 +26,13 @@
 
 #infoCard {
     width: 150px;
+    font-family: sans-serif;
 }
 
 #pokemonName {
     margin: 65px 0 0 0;
     color: black;
-    font-size: 200%;
+    font-size: 190%;
 }
 
 /* -- Pseudo Class Styles -- */
