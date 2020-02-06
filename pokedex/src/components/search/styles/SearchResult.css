@@ -35,10 +35,10 @@
 
 /* -- Pseudo Class Styles -- */
 
-p:first-of-type {
-    display: inline;
-}
-
-p:nth-of-type(2) {
-    display: inline;
+p {
+    margin: 2px;
+    padding: 5px 10px;
+    background-color: white;
+    display: inline-block;
+    border-radius: 16px;
 }
