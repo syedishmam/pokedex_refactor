@@ -38,3 +38,12 @@ export const storePokemonData = (data) => {
         payload: data
     }
 }
+
+/* -- Theme Actions -- */
+
+export const changeTheme = (theme) => {
+    return {
+        type: 'CHANGE_THEME',
+        payload: theme
+    }
+}
