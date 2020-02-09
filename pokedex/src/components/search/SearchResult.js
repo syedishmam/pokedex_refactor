@@ -46,7 +46,9 @@ class SearchResult extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {pokemonName: state.pokemonData.data.species.name, pokemonTypes: state.pokemonData.data.types}
+    return {pokemonName: state.pokemonData.data.species.name,
+            pokemonTypes: state.pokemonData.data.types
+        }
 }
 
 export default connect(mapStateToProps)(SearchResult);

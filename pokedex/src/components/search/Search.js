@@ -14,9 +14,10 @@ class Search extends React.Component {
     state = {searchQuery: ''};
 
     fetchPokemon = async (pokemon) => {
-        const response = await pokeApi.get('pokemon/' + pokemon)
+        const response = await pokeApi.get('pokemon/' + pokemon);
+        const speciesData = await pokeApi.get('pokemon-species/' + response.data.id);
         this.props.storePokemonData(response.data);
-        console.log(response.data);
+        console.log(speciesData.data);
     }
 
     onEnterKeyPress = (event) => {
