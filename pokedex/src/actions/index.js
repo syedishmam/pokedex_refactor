@@ -32,10 +32,10 @@ export const displayMoves = (type) => {
 
 /* --- Search Actions --- */
 
-export const storePokemonData = (data) => {
+export const storePokemonData = (data, speciesData) => {
     return {
         type: 'STORE_POKEMON_DATA',
-        payload: data
+        payload: [data, speciesData]
     }
 }
 

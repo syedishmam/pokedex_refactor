@@ -16,7 +16,7 @@ class Search extends React.Component {
     fetchPokemon = async (pokemon) => {
         const response = await pokeApi.get('pokemon/' + pokemon);
         const speciesData = await pokeApi.get('pokemon-species/' + response.data.id);
-        this.props.storePokemonData(response.data);
+        this.props.storePokemonData(response.data, speciesData.data);
         console.log(speciesData.data);
     }
 
