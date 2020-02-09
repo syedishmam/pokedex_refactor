@@ -7,10 +7,10 @@
     border: 1px solid black;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 48%;
     left: 50%;
     transform: translate(-50%, -50%);
-    height: 200px;
+    height: 450px;
     width: 350px;
     text-decoration: none;
     background-color: lightskyblue;

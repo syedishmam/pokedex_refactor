@@ -1,7 +1,7 @@
 /* ID Styles */
 
 #searchBarContainer {
-    margin: 40px 0px;
+    margin: 100px 5px;
     text-align: center;
 }
 
@@ -11,6 +11,6 @@
 }
 
 #searchButton {
-    width: 75px;
+    width: 65px;
     height: 36px
 }
