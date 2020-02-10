@@ -13,6 +13,7 @@ class SearchResult extends React.Component {
         return capitalize;
     }
 
+    //Export english flavor text from array of descriptions in numerous languages
     getEnglishPokemonDescription() {
         const englishDesc = this.props.pokemonDescs.find(desc => desc.language.name === 'en');
         this.props.storePokemonDescEnglish(englishDesc.flavor_text);
