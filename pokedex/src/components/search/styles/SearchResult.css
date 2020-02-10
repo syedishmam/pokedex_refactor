@@ -18,10 +18,9 @@
 }
 
 #pokemonImage {
-    display: flex;
-    justify-content: flex-start;
-    width: 200px;
-    height: 200px;
+    display: block;
+    min-width: 250px;
+    height: 250px;
 }
 
 #infoCard {
@@ -35,12 +34,14 @@
     font-size: 190%;
 }
 
-/* -- Pseudo Class Styles -- */
+/* -- Class Styles -- */
 
-p {
+.type {
     margin: 2px;
     padding: 5px 10px;
     background-color: white;
     display: inline-block;
     border-radius: 16px;
 }
+
+/* -- Pseudo Class Styles -- */

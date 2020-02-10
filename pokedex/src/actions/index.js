@@ -39,6 +39,13 @@ export const storePokemonData = (data, speciesData) => {
     }
 }
 
+export const storePokemonDescEnglish = (desc) => {
+    return {
+        type: 'STORE_POKEMON_DESC',
+        payload: desc
+    }
+}
+
 /* -- Theme Actions -- */
 
 export const changeTheme = (theme) => {

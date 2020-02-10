@@ -2,6 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
+import {storePokemonDescEnglish} from '../../actions/index.js'
+
 import './styles/SearchResult.css';
 
 class SearchResult extends React.Component {
@@ -9,6 +11,12 @@ class SearchResult extends React.Component {
     capitalizeFirstChar(pokemon) {
         const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
         return capitalize;
+    }
+
+    getEnglishPokemonDescription() {
+        const englishDesc = this.props.pokemonDescs.find(desc => desc.language.name === 'en');
+        this.props.storePokemonDescEnglish(englishDesc.flavor_text);
+        return englishDesc.flavor_text;
     }
 
     //Displays up to 2 types for selected pokemon 
@@ -21,13 +29,13 @@ class SearchResult extends React.Component {
         if(pokemonTypesArray.length === 2) {
             return (
                 <div>
-                    <p>{pokemonTypesArray[0]}</p>
-                    <p>{pokemonTypesArray[1]}</p>
+                    <p className="type">{pokemonTypesArray[0]}</p>
+                    <p className="type">{pokemonTypesArray[1]}</p>
                 </div>
             )
         } else {
             return (
-                <p>{pokemonTypesArray[0]}</p>
+                <p className="type">{pokemonTypesArray[0]}</p>
             )
         }
     }
@@ -39,6 +47,7 @@ class SearchResult extends React.Component {
                 <div id="infoCard">
                     <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
+                    <p>{this.getEnglishPokemonDescription()}</p>
                 </div>
             </Link>
         )
@@ -47,8 +56,9 @@ class SearchResult extends React.Component {
 
 const mapStateToProps = (state) => {
     return {pokemonName: state.pokemonData.data.species.name,
-            pokemonTypes: state.pokemonData.data.types
+            pokemonTypes: state.pokemonData.data.types,
+            pokemonDescs: state.pokemonData.speciesData.flavor_text_entries
         }
 }
 
-export default connect(mapStateToProps)(SearchResult);
+export default connect(mapStateToProps, {storePokemonDescEnglish})(SearchResult);
