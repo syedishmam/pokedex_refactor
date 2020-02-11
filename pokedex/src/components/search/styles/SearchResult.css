@@ -1,8 +1,11 @@
 /* --- ID Styles --- */
 
+#description {
+    text-align: center;
+}
+
 #infoCard {
     margin: auto;
-    width: 150px;
     font-family: sans-serif;
 }
 
@@ -21,7 +24,7 @@
 
 #searchResultContainer {
     margin: 0;
-    padding: 0;
+    padding: 5px;
     border: 1px solid black;
     text-align: center;
     position: absolute;
@@ -31,7 +34,7 @@
     height: 450px;
     width: 350px;
     text-decoration: none;
-    background-color: lightskyblue;
+    background-color: orange;
     color: black;
 }
 

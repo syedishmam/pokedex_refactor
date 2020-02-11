@@ -48,7 +48,7 @@ class SearchResult extends React.Component {
                 <div id="infoCard">
                     <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
-                    <p>{this.getEnglishPokemonDescription()}</p>
+                    <p className="description">{this.getEnglishPokemonDescription()}</p>
                 </div>
             </Link>
         )
