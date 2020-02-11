@@ -8,6 +8,10 @@ import './styles/SearchResult.css';
 
 class SearchResult extends React.Component {
 
+    backgroundColor = {
+        backgroundColor: this.props.themes
+    }
+
     capitalizeFirstChar(pokemon) {
         const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
         return capitalize;
@@ -18,6 +22,10 @@ class SearchResult extends React.Component {
         const englishDesc = this.props.pokemonDescs.find(desc => desc.language.name === 'en');
         this.props.storePokemonDescEnglish(englishDesc.flavor_text);
         return englishDesc.flavor_text;
+    }
+
+    updateStyles() {
+
     }
 
     //Displays up to 2 types for selected pokemon 
@@ -42,10 +50,11 @@ class SearchResult extends React.Component {
     }
 
     render() {
+
         return (
             <Link to={`/profile/${this.props.pokemonName}`} id="searchResultContainer">
                 <img id="pokemonImage" src={this.props.search.sprites.front_default} alt="pokemon sprite" />
-                <div id="infoCard">
+                <div  style={this.backgroundColor} id="infoCard">
                     <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
                     <p className="description">{this.getEnglishPokemonDescription()}</p>

@@ -5,7 +5,7 @@ import SearchBar from './SearchBar.js';
 import SearchResult from './SearchResult.js';
 import pokeApi from '../../api/pokeApi.js';
 
-import {storePokemonData} from '../../actions';
+import {storePokemonData, changeTheme} from '../../actions';
 
 import './styles/Search.css';
 
@@ -31,12 +31,25 @@ class Search extends React.Component {
         console.log(this.state.searchQuery);
     }
 
+    updateTheme = () => {
+        if(this.props.pokemonTypes) {
+            switch(this.props.pokemonTypes[0].type.name) {
+                case 'water': 
+                    this.props.changeTheme('water');
+                    break;
+    
+                default:
+                    return null
+            }
+        }
+    }
+
     renderSearchContent() {
         if(this.props.pokemonData) {
             return (
                 <div>
                     <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
-                    <SearchResult search={this.props.pokemonData} />
+                    <SearchResult search={this.props.pokemonData} themes={this.props.theme} />
                 </div>
             )
         } else {
@@ -44,6 +57,10 @@ class Search extends React.Component {
                 <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
             )
         }
+    }
+
+    componentDidUpdate() {
+        this.updateTheme();
     }
 
     render() {
@@ -56,7 +73,11 @@ class Search extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {pokemonData: state.pokemonData.data}
+    return {
+        pokemonData: state.pokemonData.data,
+        pokemonTypes: state.pokemonData.data.types,
+        theme: state.theme.theme
+    }
 }
 
-export default connect(mapStateToProps, {storePokemonData})(Search);
+export default connect(mapStateToProps, {storePokemonData, changeTheme})(Search);

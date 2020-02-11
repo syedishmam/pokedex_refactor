@@ -1,7 +1,7 @@
-export default (state = {theme: ''}) => {
-    switch(action.type) {
-        case 'CHANGE_THEME':
-            return {...state, theme: action.payload}
+export default (state = {theme: ''}, action) => {
+    switch(action.payload) {
+        case 'water':
+            return {...state, theme: '#add8e6'}
 
         default:
             return state
