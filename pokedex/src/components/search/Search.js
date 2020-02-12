@@ -49,7 +49,7 @@ class Search extends React.Component {
             return (
                 <div>
                     <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
-                    <SearchResult search={this.props.pokemonData} themes={this.props.theme} />
+                    <SearchResult search={this.props.pokemonData} theme={this.props.theme} />
                 </div>
             )
         } else {
