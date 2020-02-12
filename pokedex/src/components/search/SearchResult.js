@@ -41,7 +41,8 @@ class SearchResult extends React.Component {
         }
     }
 
-    renderResults() {
+    //Rerenders SearchResult every time a new theme is required
+    renderSearchResults() {
         const backgroundColor = {backgroundColor: this.props.theme}
         return (
             <Link to={`/profile/${this.props.pokemonName}`} style={backgroundColor} id="searchResultContainer">
@@ -59,7 +60,7 @@ class SearchResult extends React.Component {
 
         return (
             <div>
-                {this.renderResults()}
+                {this.renderSearchResults()}
             </div>
         )
     }

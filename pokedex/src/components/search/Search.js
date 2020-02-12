@@ -13,6 +13,7 @@ class Search extends React.Component {
 
     state = {searchQuery: ''};
 
+    //Fetch pokemon from API
     fetchPokemon = async (pokemon) => {
         const response = await pokeApi.get('pokemon/' + pokemon);
         const speciesData = await pokeApi.get('pokemon-species/' + response.data.id);
@@ -20,6 +21,7 @@ class Search extends React.Component {
         console.log(speciesData.data);
     }
 
+    //Fetch pokemon on Enter keypress
     onEnterKeyPress = (event) => {
         if(event.key === 'Enter') {
             this.fetchPokemon(this.state.searchQuery);
@@ -31,6 +33,7 @@ class Search extends React.Component {
         console.log(this.state.searchQuery);
     }
 
+    //Updates application theme based on pokemon type
     updateTheme = () => {
         if(this.props.pokemonTypes) {
             this.props.changeTheme(this.props.pokemonTypes[0].type.name);
