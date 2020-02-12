@@ -20,13 +20,12 @@ class Profile extends React.Component {
         if(this.props.data) {
             return (
                 <div>
-                    <GenInfo />
-                    <DetailedInfo/>
+                    <GenInfo theme={this.props.theme} />
+                    <DetailedInfo theme={this.props.theme} />
                 </div>
             ) 
         } else {
             this.fetchPokemonIfNoData(document.URL.substring(30));
-            
         }
     }
 
@@ -40,7 +39,10 @@ class Profile extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {data: state.pokemonData.data}
+    return {
+        data: state.pokemonData.data,
+        theme: state.theme.theme
+    }
 }
 
 export default connect(mapStateToProps, {storePokemonData})(Profile);
