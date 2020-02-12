@@ -33,14 +33,7 @@ class Search extends React.Component {
 
     updateTheme = () => {
         if(this.props.pokemonTypes) {
-            switch(this.props.pokemonTypes[0].type.name) {
-                case 'water': 
-                    this.props.changeTheme('water');
-                    break;
-    
-                default:
-                    return null
-            }
+            this.props.changeTheme(this.props.pokemonTypes[0].type.name);
         }
     }
 
