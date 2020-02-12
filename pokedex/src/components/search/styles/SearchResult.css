@@ -40,7 +40,7 @@
 /* -- Class Styles -- */
 
 .type {
-    margin: 2px;
+    margin: 10px 2px 0px 2px; 
     padding: 5px 10px;
     background-color: white;
     display: inline-block;
