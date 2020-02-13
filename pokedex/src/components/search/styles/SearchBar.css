@@ -6,11 +6,18 @@
 }
 
 #searchTextField {
-    width: 284px;
+    padding-left: 8.1px;
+    width: 88.7%;
     height: 30px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 10px 0 0 10px;
 }
 
 #searchButton {
-    width: 65px;
-    height: 36px;
+    width: 32px;
+    height: 32px;
+    background-color: lightgray;
+    border: none;
+    border-radius: 0 10px 10px 0;
 }

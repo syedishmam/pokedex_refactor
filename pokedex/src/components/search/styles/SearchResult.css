@@ -48,3 +48,7 @@
 }
 
 /* -- Pseudo Class Styles -- */
+
+p {
+    font-size: 110%;
+}
