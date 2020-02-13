@@ -7,7 +7,7 @@ class SearchBar extends React.Component {
         return (
             <div id="searchBarContainer">
                 <input id="searchTextField" type="text" value={this.props.searchValue} onChange={this.props.updateSearchQuery} onKeyPress={this.props.onEnter}/>
-                <button id="searchButton" onClick={() => this.props.fetchPokemon(this.props.searchValue)}>Submit</button>
+                <button id="searchButton" onClick={() => this.props.fetchPokemon(this.props.searchValue)}>S</button>
             </div>
         )
     }
