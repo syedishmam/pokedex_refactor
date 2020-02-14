@@ -46,6 +46,13 @@ export const storePokemonDescEnglish = (desc) => {
     }
 }
 
+export const storePokemonTypes = (types) => {
+    return {
+        type: 'STORE_POKEMON_TYPES',
+        payload: types
+    }
+}
+
 /* -- Theme Actions -- */
 
 export const changeTheme = (theme) => {

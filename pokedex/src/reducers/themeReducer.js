@@ -1,57 +1,57 @@
 export default (state = {theme: ''}, action) => {
     switch(action.payload) {
-        case 'water':
+        case 'Water':
             return {...state, theme: '#4dd1fa'}
 
-        case 'electric':
+        case 'Electric':
             return {...state, theme: '#ffe100'}
 
-        case 'fire':
+        case 'Fire':
             return {...state, theme: '#ff6666'}
 
-        case 'grass':
+        case 'Grass':
             return {...state, theme: '#58d6ae'}
 
-        case 'ground':
+        case 'Ground':
             return {...state, theme: '#dce3a8'}
 
-        case 'normal':
+        case 'Normal':
             return {...state, theme: '#e6e6e6'}
             
-        case 'fairy':
+        case 'Fairy':
             return {...state, theme: '#ff9191'}
 
-        case 'ice':
+        case 'Ice':
             return {...state, theme: '#aef5fc'}
 
-        case 'steel':
+        case 'Steel':
             return {...state, theme: '#dbdbdb'}
     
-        case 'psychic':
+        case 'Psychic':
             return {...state, theme: '#cf9bfa'}
     
-        case 'dark':
+        case 'Dark':
             return {...state, theme: '#482169'}
     
-        case 'rock':
+        case 'Rock':
             return {...state, theme: '#75735b'}
     
-        case 'poison':
+        case 'Poison':
             return {...state, theme: '#9a5cab'}
                 
-        case 'dragon':
+        case 'Dragon':
             return {...state, theme: '#ff642b'}
     
-        case 'bug':
+        case 'Bug':
             return {...state, theme: '#72e653'}
 
-        case 'ghost':
+        case 'Ghost':
             return {...state, theme: '#cf9bfa'}
         
-        case 'flying':
+        case 'Flying':
             return {...state, theme: '#d4f0ff'}
 
-        case 'fighting':
+        case 'Fighting':
             return {...state, theme: '#f7ffb8'}
 
 

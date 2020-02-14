@@ -28,6 +28,15 @@ class Search extends React.Component {
         }
     }
 
+    orderTypesByImportance = (types) => {
+        if(types[1] === "Water" || types[1] === "Fire" || types[1] === "Grass" || types[1] === "Ground"  || types[1] === "Electric") {
+            const temp = types[0];
+            types[0] = types[1];
+            types[1] = temp;
+        }
+        return types;
+    }
+
     updateSearchQuery = (event) => {
         this.setState({ searchQuery: event.target.value });
         console.log(this.state.searchQuery);
@@ -36,7 +45,7 @@ class Search extends React.Component {
     //Updates application theme based on pokemon type
     updateTheme = () => {
         if(this.props.pokemonTypes) {
-            this.props.changeTheme(this.props.pokemonTypes[0].type.name);
+            this.props.changeTheme(this.props.pokemonTypes[0]);
         }
     }
 
@@ -45,7 +54,7 @@ class Search extends React.Component {
             return (
                 <div>
                     <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
-                    <SearchResult search={this.props.pokemonData} theme={this.props.theme} />
+                    <SearchResult search={this.props.pokemonData} orderTypes={this.orderTypesByImportance} theme={this.props.theme} />
                 </div>
             )
         } else {
@@ -71,7 +80,7 @@ class Search extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokemonData: state.pokemonData.data,
-        pokemonTypes: state.pokemonData.data.types,
+        pokemonTypes: state.pokemonData.types,
         theme: state.theme.theme
     }
 }

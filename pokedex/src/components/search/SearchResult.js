@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {storePokemonDescEnglish} from '../../actions/index.js'
+import {storePokemonDescEnglish, storePokemonTypes} from '../../actions/index.js'
 
 import './styles/SearchResult.css';
 
@@ -28,13 +28,16 @@ class SearchResult extends React.Component {
             pokemonTypesArray.push(this.capitalizeFirstChar(currentPokemonType));
         }
         if(pokemonTypesArray.length === 2) {
+            const orderedTypes = this.props.orderTypes(pokemonTypesArray);
+            this.props.storePokemonTypes(orderedTypes);
             return (
                 <div>
-                    <p className="type">{pokemonTypesArray[0]}</p>
-                    <p className="type">{pokemonTypesArray[1]}</p>
+                    <p className="type">{orderedTypes[0]}</p>
+                    <p className="type">{orderedTypes[1]}</p>
                 </div>
             )
         } else {
+            this.props.storePokemonTypes(pokemonTypesArray);
             return (
                 <p className="type">{pokemonTypesArray[0]}</p>
             )
@@ -74,4 +77,4 @@ const mapStateToProps = (state) => {
         }
 }
 
-export default connect(mapStateToProps, {storePokemonDescEnglish})(SearchResult);
+export default connect(mapStateToProps, {storePokemonDescEnglish, storePokemonTypes})(SearchResult);
