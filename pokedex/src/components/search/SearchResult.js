@@ -22,6 +22,7 @@ class SearchResult extends React.Component {
 
     //Displays up to 2 types for selected pokemon 
     renderTypes() {
+        let textColor = {color: this.props.theme};
         const pokemonTypesArray = [];
         for(let i = 0; i < this.props.pokemonTypes.length; i++) {
             const currentPokemonType = this.props.pokemonTypes[i].type.name;
@@ -32,14 +33,14 @@ class SearchResult extends React.Component {
             this.props.storePokemonTypes(orderedTypes);
             return (
                 <div>
-                    <p className="type">{orderedTypes[0]}</p>
-                    <p className="type">{orderedTypes[1]}</p>
+                    <p style={textColor} className="type">{orderedTypes[0]}</p>
+                    <p style={textColor} className="type">{orderedTypes[1]}</p>
                 </div>
             )
         } else {
             this.props.storePokemonTypes(pokemonTypesArray);
             return (
-                <p className="type">{pokemonTypesArray[0]}</p>
+                <p style={textColor} className="type">{pokemonTypesArray[0]}</p>
             )
         }
     }

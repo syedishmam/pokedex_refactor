@@ -46,9 +46,10 @@
 .type {
     margin: 10px 2px 0px 2px; 
     padding: 5px 10px;
+    border-radius: 10px;
     background-color: whitesmoke;
     display: inline-block;
-    border-radius: 10px;
+    text-shadow: none;
     font-weight: bold;
 }
 
