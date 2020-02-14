@@ -39,7 +39,6 @@ class Search extends React.Component {
 
     updateSearchQuery = (event) => {
         this.setState({ searchQuery: event.target.value });
-        console.log(this.state.searchQuery);
     }
 
     //Updates application theme based on pokemon type
