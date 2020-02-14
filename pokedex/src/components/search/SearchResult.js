@@ -51,6 +51,7 @@ class SearchResult extends React.Component {
                     <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
                     <p className="description">{this.getEnglishPokemonDescription()}</p>
+                    <h3 id="moreInfoBanner">Click For More Info</h3>
                 </div>
             </Link>
         )
