@@ -1,12 +1,13 @@
 /* ID Styles */
 
 #searchBarContainer {
-    margin: 100px 5px;
+    margin: 100px 0px;
     text-align: center;
 }
 
 #searchTextField {
     padding-left: 8.1px;
+    margin: 0;
     width: 88.7%;
     height: 30px;
     background-color: lightgray;
@@ -20,4 +21,26 @@
     background-color: lightgray;
     border: none;
     border-radius: 0 10px 10px 0;
+    margin: 0;
+}
+
+.magnifying-glass
+{
+ font-size: 10em; /* This controls the size. */
+ display: inline-block;
+ width: 0.4em;
+ height: 0.4em;
+ border: 0.1em solid #B10B14;
+ position: relative;
+ border-radius: 0.35em;
+}
+
+/* -- Pseudo Selectors -- */
+
+input:focus {
+    outline: none;
+}
+
+button:focus {
+    outline: none;
 }
