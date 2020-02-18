@@ -49,10 +49,10 @@ class Search extends React.Component {
     renderSearchContent() {
         if(this.props.pokemonData) {
             return (
-                <div>
+                <span>
                     <SearchBar searchValue={this.state.searchQuery} updateSearchQuery={this.updateSearchQuery} onEnter={this.onEnterKeyPress} fetchPokemon={this.fetchPokemon}/>
                     <SearchResult search={this.props.pokemonData} orderTypes={this.orderTypesByImportance} theme={this.props.theme} />
-                </div>
+                </span>
             )
         } else {
             return (

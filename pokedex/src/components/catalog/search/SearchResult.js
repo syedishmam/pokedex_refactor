@@ -49,7 +49,7 @@ class SearchResult extends React.Component {
     renderSearchResults() {
         const backgroundColor = {backgroundColor: this.props.theme}
         return (
-            <Link to={`/profile/${this.props.pokemonName}`} style={backgroundColor} id="searchResultContainer">
+            <div id="searchResultContainer" style={backgroundColor} >
                 <img id="pokemonImage" src={this.props.search.sprites.front_default} alt="pokemon sprite" />
                 <div id="infoCard">
                     <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
@@ -57,16 +57,17 @@ class SearchResult extends React.Component {
                     <p className="description">{this.getEnglishPokemonDescription()}</p>
                     <h3 id="moreInfoBanner">Click For More Info</h3>
                 </div>
-            </Link>
+            </div>
         )
     }
 
-    render() {
+    render() { 
 
-        return (
-            <div>
+
+       return (
+            <Link to={`/profile/${this.props.pokemonName}`}>
                 {this.renderSearchResults()}
-            </div>
+            </Link>
         )
     }
 }
