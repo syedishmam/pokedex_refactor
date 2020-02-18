@@ -7,8 +7,6 @@ import pokeApi from '../../../api/pokeApi.js';
 
 import {storePokemonData, changeTheme} from '../../../actions';
 
-import './styles/Search.css';
-
 class Search extends React.Component {
 
     state = {searchQuery: ''};
