@@ -1,0 +1,12 @@
+/* ID Styles */
+
+#searchContainer {
+    margin: 5px;
+    font-family: sans-serif;
+}
+
+/* --- Global Selector --- */
+
+* {
+    font-family: sans-serif;
+}

@@ -3,9 +3,9 @@ import {connect} from 'react-redux';
 
 import SearchBar from './SearchBar.js';
 import SearchResult from './SearchResult.js';
-import pokeApi from '../../api/pokeApi.js';
+import pokeApi from '../../../api/pokeApi.js';
 
-import {storePokemonData, changeTheme} from '../../actions';
+import {storePokemonData, changeTheme} from '../../../actions';
 
 import './styles/Search.css';
 

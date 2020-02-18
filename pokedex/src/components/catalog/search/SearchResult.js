@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {storePokemonDescEnglish, storePokemonTypes} from '../../actions/index.js'
+import {storePokemonDescEnglish, storePokemonTypes} from '../../../actions/index.js'
 
 import './styles/SearchResult.css';
 
