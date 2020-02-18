@@ -1,4 +1,30 @@
 #catalogContainer {
     font-family: sans-serif;
     margin: 5px;
+    margin-top: 20px;
+}
+
+#title {
+    margin: 2.5px 0 0 0;
+}
+
+#welcomeMessage {
+    margin: 0;
+    font-size: 100%;
+}
+
+#logOutButton {
+    margin-top: 0px;
+    padding: 0 8px;
+    height: 30px;
+    float: right;
+    border: none;
+    border-radius: 10px;
+    background-color: red;
+}
+
+/* --- Child Selectors --- */
+
+#catalogHeader > * {
+    margin-left: 2.5px;
 }
