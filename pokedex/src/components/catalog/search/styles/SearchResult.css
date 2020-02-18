@@ -30,12 +30,8 @@
     padding: 5px;
     border-radius: 10px;
     text-align: center;
-    position: absolute;
-    top: 52.5%;
-    left: 50%;
-    transform: translate(-50%, -50%);
     height: 550px;
-    width: 94%;
+    width: 355px;
     text-decoration: none;
     color: white;
     text-shadow: gray 0px 0px 10px;
@@ -57,4 +53,8 @@
 
 p {
     font-size: 110%;
+}
+
+a {
+    text-decoration: none;
 }
