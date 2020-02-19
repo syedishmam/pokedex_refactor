@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import GenInfo from './gen_card/GenInfoContainer.js';
+import GenInfo from './gen_card/GenInfo.js';
 import pokeApi from '../../api/pokeApi.js'
 import {storePokemonData} from '../../actions/index.js'
 
