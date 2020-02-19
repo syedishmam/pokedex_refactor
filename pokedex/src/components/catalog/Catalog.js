@@ -1,6 +1,7 @@
 import React from 'react';
 
-import Search from './search/Search.js'
+import Search from './search/Search.js';
+import Browse from './browse/Browse.js';
 
 import './styles/Catalog.css';
 
@@ -14,6 +15,7 @@ class Catalog extends React.Component {
                     <h3 id="welcomeMessage">Welcome, User!</h3>
                 </div>
                 <Search />
+                <Browse />
             </div>
         )
     }
