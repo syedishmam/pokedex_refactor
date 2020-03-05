@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 
 import GenInfo from './gen_card/GenInfo.js';
 import pokeApi from '../../api/pokeApi.js'
-import {storePokemonData} from '../../actions/index.js'
+import {storePokemonData, changeTheme} from '../../actions/index.js'
 
 import './styles/Profile.css';
 import DetailedInfo from './detailed_card/DetailedInfo.js';
@@ -20,8 +20,8 @@ class Profile extends React.Component {
         if(this.props.data) {
             return (
                 <div>
-                    <GenInfo theme={this.props.theme} />
-                    <DetailedInfo theme={this.props.theme} />
+                    <GenInfo />
+                    <DetailedInfo />
                 </div>
             ) 
         } else {
@@ -40,9 +40,8 @@ class Profile extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        data: state.pokemonData.data,
-        theme: state.theme.theme
+        data: state.pokemonData.data
     }
 }
 
-export default connect(mapStateToProps, {storePokemonData})(Profile);
+export default connect(mapStateToProps, {storePokemonData, changeTheme})(Profile);
