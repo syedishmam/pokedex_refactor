@@ -1,4 +1,5 @@
 import React from 'react';
+import {connect} from 'react-redux';
 
 import Header from './Header.js';
 import NamePlate from './NamePlate.js';
@@ -19,4 +20,10 @@ class GenInfo extends React.Component {
     }
 }
 
-export default GenInfo;
+const mapStateToProps = (state) => {
+    return {
+        theme: state.theme.theme
+    }
+}
+
+export default connect(mapStateToProps)(GenInfo);
