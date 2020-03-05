@@ -1,8 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import Cell from './Cell.js';
-
 import './styles/NamePlate.css';
 
 class NamePlate extends React.Component {
@@ -12,10 +10,6 @@ class NamePlate extends React.Component {
             return(
                 <div>
                     <h1 className="pokemonName">{this.props.pokemonName}</h1>
-                    <div className="cells">
-                        <Cell />
-                        <Cell />
-                    </div>
                     <img id="pokemonSprite" src={this.props.pokemonPicture} alt="Pokemon Sprite" />
                 </div>
             )
