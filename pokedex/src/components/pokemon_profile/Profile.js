@@ -2,19 +2,13 @@ import React from 'react';
 import {connect} from 'react-redux';
 
 import GenInfo from './gen_card/GenInfo.js';
-import pokeApi from '../../api/pokeApi.js'
-import {storePokemonData, changeTheme} from '../../actions/index.js'
+import {storePokemonData} from '../../actions/index.js';
+import {fetchPokemon} from '../../api/apiFunctions.js';
 
 import './styles/Profile.css';
 import DetailedInfo from './detailed_card/DetailedInfo.js';
 
 class Profile extends React.Component {
-
-    fetchPokemonIfNoData = async (pokemon) => {
-        const response = await pokeApi.get('pokemon/' + pokemon);
-        this.props.storePokemonData(response.data);
-        console.log(response.data)
-    }
 
     renderProfile() {
         if(this.props.data) {
@@ -25,7 +19,7 @@ class Profile extends React.Component {
                 </div>
             ) 
         } else {
-            this.fetchPokemonIfNoData(document.URL.substring(30));
+            fetchPokemon(document.URL.substring(30), this.props.storePokemonData);
         }
     }
 
@@ -44,4 +38,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps, {storePokemonData, changeTheme})(Profile);
+export default connect(mapStateToProps, {storePokemonData})(Profile);
