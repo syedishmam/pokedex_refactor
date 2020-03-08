@@ -29,8 +29,7 @@ class SearchResult extends React.Component {
             pokemonTypesArray.push(this.capitalizeFirstChar(currentPokemonType));
         }
         if(pokemonTypesArray.length === 2) {
-            const orderedTypes = this.props.orderTypes(pokemonTypesArray);
-            this.props.storePokemonTypes(orderedTypes);
+            const orderedTypes = this.props.orderTypesAndStore(pokemonTypesArray, this.props.storePokemonTypes);
             return (
                 <div>
                     <p style={textColor} className="type">{orderedTypes[0]}</p>
