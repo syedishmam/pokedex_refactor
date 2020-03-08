@@ -6,7 +6,7 @@ import './styles/NamePlate.css';
 class NamePlate extends React.Component {
 
     renderPokemonProfile() {
-        if(this.props.pokemonPicture || this.props.pokemonName) {
+        if(this.props.pokemonPicture && this.props.pokemonName) {
             return(
                 <div>
                     <h1 className="pokemonName">{this.props.pokemonName}</h1>
@@ -31,8 +31,8 @@ class NamePlate extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        pokemonPicture: state.pokemonData.data.sprites.front_default,
-        pokemonName: state.pokemonData.data.species.name
+        pokemonName: state.pokemonData.data.species.name,
+        pokemonPicture: state.pokemonData.data.sprites.front_default
     }
 }
 
