@@ -2,7 +2,7 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {storePokemonDescEnglish, storePokemonTypes} from '../../../actions/index.js'
+import {storePokemonDescEnglish, storePokemonTypes, changeTheme} from '../../../actions/index.js'
 
 import './styles/SearchResult.css';
 
@@ -22,7 +22,7 @@ class SearchResult extends React.Component {
 
     //Displays up to 2 types for selected pokemon 
     renderTypes() {
-        let textColor = {color: this.props.theme};
+        let textColor;
         const pokemonTypesArray = [];
         for(let i = 0; i < this.props.pokemonTypes.length; i++) {
             const currentPokemonType = this.props.pokemonTypes[i].type.name;
@@ -30,6 +30,9 @@ class SearchResult extends React.Component {
         }
         if(pokemonTypesArray.length === 2) {
             const orderedTypes = this.props.orderTypesAndStore(pokemonTypesArray, this.props.storePokemonTypes);
+            console.log(orderedTypes);
+            this.props.updateTheme(orderedTypes, this.props.changeTheme);
+            textColor = {color: this.props.theme};
             return (
                 <div>
                     <p style={textColor} className="type">{orderedTypes[0]}</p>
@@ -38,6 +41,8 @@ class SearchResult extends React.Component {
             )
         } else {
             this.props.storePokemonTypes(pokemonTypesArray);
+            this.props.updateTheme(pokemonTypesArray, this.props.changeTheme);
+            textColor = {color: this.props.theme}
             return (
                 <p style={textColor} className="type">{pokemonTypesArray[0]}</p>
             )
@@ -72,10 +77,12 @@ class SearchResult extends React.Component {
 }
 
 const mapStateToProps = (state) => {
-    return {pokemonName: state.pokemonData.data.species.name,
+    return {
+            pokemonName: state.pokemonData.data.species.name,
             pokemonTypes: state.pokemonData.data.types,
-            pokemonDescs: state.pokemonData.speciesData.flavor_text_entries
+            pokemonDescs: state.pokemonData.speciesData.flavor_text_entries,
+            themeColor: state.theme.theme
         }
 }
 
-export default connect(mapStateToProps, {storePokemonDescEnglish, storePokemonTypes})(SearchResult);
+export default connect(mapStateToProps, {storePokemonDescEnglish, storePokemonTypes, changeTheme})(SearchResult);
