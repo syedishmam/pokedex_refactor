@@ -20,7 +20,9 @@ class SearchResult extends React.Component {
         return englishDesc.flavor_text;
     }
 
-    //Displays up to 2 types for selected pokemon 
+    //Puts pokemon types in order of importance
+    //Changes theme color based on ordered types
+    //Renders up to two types 
     renderTypes() {
         let textColor;
         const pokemonTypesArray = [];
@@ -32,7 +34,7 @@ class SearchResult extends React.Component {
             const orderedTypes = this.props.orderTypesAndStore(pokemonTypesArray, this.props.storePokemonTypes);
             console.log(orderedTypes);
             this.props.updateTheme(orderedTypes, this.props.changeTheme);
-            textColor = {color: this.props.theme};
+            textColor = {color: this.props.themeColor};
             return (
                 <div>
                     <p style={textColor} className="type">{orderedTypes[0]}</p>
@@ -42,7 +44,7 @@ class SearchResult extends React.Component {
         } else {
             this.props.storePokemonTypes(pokemonTypesArray);
             this.props.updateTheme(pokemonTypesArray, this.props.changeTheme);
-            textColor = {color: this.props.theme}
+            textColor = {color: this.props.themeColor}
             return (
                 <p style={textColor} className="type">{pokemonTypesArray[0]}</p>
             )
@@ -51,7 +53,7 @@ class SearchResult extends React.Component {
 
     //Rerenders SearchResult every time a new theme is required
     renderSearchResults() {
-        const backgroundColor = {backgroundColor: this.props.theme}
+        const backgroundColor = {backgroundColor: this.props.themeColor}
         return (
             <div id="searchResultContainer" style={backgroundColor} >
                 <img id="pokemonImage" src={this.props.search.sprites.front_default} alt="pokemon sprite" />
