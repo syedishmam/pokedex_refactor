@@ -23,8 +23,7 @@ export const orderTypesByImportance = (types, typesStore) => {
 
 //Updates application theme based on pokemon type
 export const updateTheme = (types, changeTheme) => {
-    console.log(types[0].type.name);
     if(types) {
-        changeTheme(types[1].type.name);
+        changeTheme(types[0]);
     }
 }
