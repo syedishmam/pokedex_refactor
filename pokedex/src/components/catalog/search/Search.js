@@ -5,7 +5,7 @@ import SearchBar from './SearchBar.js';
 import SearchResult from './SearchResult.js';
 import {fetchPokemon, orderTypesByImportance, updateTheme} from '../../../api/apiFunctions.js';
 
-import {storePokemonData, changeTheme} from '../../../actions';
+import {storePokemonData} from '../../../actions';
 
 class Search extends React.Component {
 
@@ -49,9 +49,7 @@ class Search extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokemonData: state.pokemonData.data,
-        pokemonTypes: state.pokemonData.types,
-        theme: state.theme.theme
     }
 }
 
-export default connect(mapStateToProps, {storePokemonData, changeTheme})(Search);
+export default connect(mapStateToProps, {storePokemonData})(Search);
