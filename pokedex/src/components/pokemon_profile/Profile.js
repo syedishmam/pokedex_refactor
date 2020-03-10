@@ -12,8 +12,9 @@ class Profile extends React.Component {
 
     performApiFunctions = async () => {
         const response = await fetchPokemon(document.URL.substring(30), this.props.storePokemonData);
-        await orderTypesByImportance(response.types, this.props.storePokemonTypes);
+        orderTypesByImportance(response.types, this.props.storePokemonTypes);
         updateTheme(this.props.pokemonTypes, this.props.changeTheme);
+        console.log(this.props.pokemonTypes);
     }
 
     renderProfile() {
@@ -41,7 +42,7 @@ class Profile extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokemonData: state.pokemonData.data,
-        pokemonTypes: state.pokemonData.data.types,
+        pokemonTypes: state.pokemonData.types,
         theme: state.theme.theme
     }
 }
