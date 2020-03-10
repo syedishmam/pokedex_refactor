@@ -24,16 +24,10 @@ class SearchResult extends React.Component {
     //Changes theme color based on ordered types
     //Renders up to two types 
     renderTypes() {
-        let textColor;
-        const pokemonTypesArray = [];
-        for(let i = 0; i < this.props.pokemonTypes.length; i++) {
-            const currentPokemonType = this.props.pokemonTypes[i].type.name;
-            pokemonTypesArray.push(this.capitalizeFirstChar(currentPokemonType));
-        }
-        if(pokemonTypesArray.length === 2) {
-            const orderedTypes = this.props.orderTypesAndStore(pokemonTypesArray, this.props.storePokemonTypes);
-            this.props.updateTheme(orderedTypes, this.props.changeTheme);
-            textColor = {color: this.props.themeColor};
+        const orderedTypes = this.props.orderTypesAndStore(this.props.pokemonTypes, this.props.storePokemonTypes);
+        this.props.updateTheme(orderedTypes, this.props.changeTheme);
+        let textColor = {color: this.props.themeColor};
+        if(orderedTypes.length === 2) {
             return (
                 <div>
                     <p style={textColor} className="type">{orderedTypes[0]}</p>
@@ -41,11 +35,8 @@ class SearchResult extends React.Component {
                 </div>
             )
         } else {
-            this.props.storePokemonTypes(pokemonTypesArray);
-            this.props.updateTheme(pokemonTypesArray, this.props.changeTheme);
-            textColor = {color: this.props.themeColor}
             return (
-                <p style={textColor} className="type">{pokemonTypesArray[0]}</p>
+                <p style={textColor} className="type">{orderedTypes[0]}</p>
             )
         }
     }
