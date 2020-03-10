@@ -12,13 +12,20 @@ export const fetchPokemon = async (pokemon, dataStore) => {
 //Rearrange array for main types to be displayed first and to have theme color reflect accordingly
 //Stores types array in redux store
 export const orderTypesByImportance = (types, typesStore) => {
-    if(types[1] === "Water" || types[1] === "Fire" || types[1] === "Grass" || types[1] === "Ground"  || types[1] === "Electric") {
-        const temp = types[0];
-        types[0] = types[1];
-        types[1] = temp;
+
+    const pokemonTypesArray = [];
+    for(let i = 0; i < types.length; i++) {
+        const currentPokemonType = types[i].type.name;
+        pokemonTypesArray.push(currentPokemonType.substring(0, 1).toUpperCase().concat(currentPokemonType.substring(1)));
     }
-    typesStore(types);
-    return types;
+
+    if(pokemonTypesArray[1] === "Water" || pokemonTypesArray[1] === "Fire" || pokemonTypesArray[1] === "Grass" || pokemonTypesArray[1] === "Ground"  || pokemonTypesArray[1] === "Electric") {
+        const temp = pokemonTypesArray[0];
+        pokemonTypesArray[0] = pokemonTypesArray[1];
+        pokemonTypesArray[1] = temp;
+    }
+    typesStore(pokemonTypesArray);
+    return pokemonTypesArray;
 }
 
 //Updates application theme based on pokemon type
