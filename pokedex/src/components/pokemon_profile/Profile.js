@@ -12,17 +12,16 @@ class Profile extends React.Component {
 
     performApiFunctions = async () => {
         const response = await fetchPokemon(document.URL.substring(30), this.props.storePokemonData);
-        orderTypesByImportance(response.types, this.props.storePokemonTypes);
-        updateTheme(this.props.pokemonTypes, this.props.changeTheme);
-        console.log(this.props.pokemonTypes);
+        const orderedTypes = orderTypesByImportance(response.types, this.props.storePokemonTypes);
+        updateTheme(orderedTypes, this.props.changeTheme);
     }
 
     renderProfile() {
         if(this.props.pokemonData) {
             return (
                 <div>
-                    <GenInfo />
-                    <DetailedInfo />
+                    <GenInfo theme={this.props.themeColor}/>
+                    <DetailedInfo theme={this.props.themeColor}/>
                 </div>
             ) 
         } else {
@@ -43,7 +42,7 @@ const mapStateToProps = (state) => {
     return {
         pokemonData: state.pokemonData.data,
         pokemonTypes: state.pokemonData.types,
-        theme: state.theme.theme
+        themeColor: state.theme.theme
     }
 }
 
