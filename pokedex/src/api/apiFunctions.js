@@ -31,3 +31,8 @@ export const updateTheme = (types, changeTheme) => {
         changeTheme(types[0]);
     }
 }
+
+export function capitalizeFirstChar(pokemon) {
+    const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
+    return capitalize;
+}

@@ -2,16 +2,12 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
-import {storePokemonDescEnglish, storePokemonTypes, changeTheme} from '../../../actions/index.js'
+import {storePokemonDescEnglish, storePokemonTypes, changeTheme} from '../../../actions/index.js';
+import {capitalizeFirstChar} from '../../../api/apiFunctions.js';
 
 import './styles/SearchResult.css';
 
 class SearchResult extends React.Component {
-
-    capitalizeFirstChar(pokemon) {
-        const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
-        return capitalize;
-    }
 
     //Export english flavor text from array of descriptions in numerous languages
     getEnglishPokemonDescription() {
@@ -48,7 +44,7 @@ class SearchResult extends React.Component {
             <div id="searchResultContainer" style={backgroundColor} >
                 <img id="pokemonImage" src={this.props.search.sprites.front_default} alt="pokemon sprite" />
                 <div id="infoCard">
-                    <h3 id="pokemonName">{this.capitalizeFirstChar(this.props.search.species.name)}</h3>
+                    <h3 id="pokemonName">{capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
                     <p className="description">{this.getEnglishPokemonDescription()}</p>
                     <h3 id="moreInfoBanner">Click For More Info</h3>
