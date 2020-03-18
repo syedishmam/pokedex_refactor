@@ -8,8 +8,8 @@ class Header extends React.Component {
     render() {
         return (
             <div className="headerContainer">
-                <Link className="backButton" to={'/catalog'}>Back</Link>
-                <button className="favoriteButton">Favorite</button>
+                <Link className="backButton" to={'/catalog'}><i className="fas fa-arrow-left"></i></Link>
+                <button className="favoriteButton"><i className="far fa-heart"></i></button>
             </div>
         )
     }

@@ -1,4 +1,7 @@
 #generalInfoContainer {
     height: 45vh;
     padding: 10px;
+    text-decoration: none;
+    color: white;
+    text-shadow: gray 0px 0px 10px;
 }

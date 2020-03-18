@@ -5,8 +5,15 @@
 
 .backButton {
     float: left;
+    font-size: x-large;
+    color: white;
 }
 
 .favoriteButton {
     float: right;
+    font-size: x-large;
+    color: white;
+    border: none;
+    background-color: transparent;
+    outline: none;
 }

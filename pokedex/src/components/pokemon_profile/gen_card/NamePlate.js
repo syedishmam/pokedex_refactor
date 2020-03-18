@@ -1,6 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {capitalizeFirstChar} from '../../../api/apiFunctions.js';
+
 import './styles/NamePlate.css';
 
 class NamePlate extends React.Component {
@@ -9,7 +11,7 @@ class NamePlate extends React.Component {
         if(this.props.pokemonPicture && this.props.pokemonName) {
             return(
                 <div>
-                    <h1 className="pokemonName">{this.props.pokemonName}</h1>
+                    <h1 className="pokemonName">{capitalizeFirstChar(this.props.pokemonName)}</h1>
                     <img id="pokemonSprite" src={this.props.pokemonPicture} alt="Pokemon Sprite" />
                 </div>
             )
