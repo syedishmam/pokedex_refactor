@@ -12,12 +12,30 @@ class NamePlate extends React.Component {
             return(
                 <div>
                     <h1 className="pokemonName">{capitalizeFirstChar(this.props.pokemonName)}</h1>
+                    {this.renderTypes()}
                     <img id="pokemonSprite" src={this.props.pokemonPicture} alt="Pokemon Sprite" />
                 </div>
             )
         } else {
             return (
                 <p>Pokemon Profile</p>
+            )
+        }
+    }
+
+    renderTypes() {
+        const types = this.props.pokemonTypes;
+        let textColor = {color: this.props.theme};
+        if(types.length === 2) {
+            return (
+                <div>
+                    <p style={textColor} className="typeCell">{types[0]}</p>
+                    <p style={textColor} className="typeCell">{types[1]}</p>
+                </div>
+            )
+        } else {
+            return (
+                <p style={textColor} className="typeCell">{types[0]}</p>
             )
         }
     }
@@ -34,7 +52,8 @@ class NamePlate extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokemonName: state.pokemonData.data.species.name,
-        pokemonPicture: state.pokemonData.data.sprites.front_default
+        pokemonPicture: state.pokemonData.data.sprites.front_default,
+        pokemonTypes: state.pokemonData.types
     }
 }
 

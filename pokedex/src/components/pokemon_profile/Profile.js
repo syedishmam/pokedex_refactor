@@ -41,7 +41,6 @@ class Profile extends React.Component {
 const mapStateToProps = (state) => {
     return {
         pokemonData: state.pokemonData.data,
-        pokemonTypes: state.pokemonData.types,
         themeColor: state.theme.theme
     }
 }

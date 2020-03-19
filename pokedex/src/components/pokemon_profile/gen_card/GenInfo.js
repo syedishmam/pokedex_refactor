@@ -13,7 +13,7 @@ class GenInfo extends React.Component {
         return (
             <div style={themeColor} id="generalInfoContainer">
                 <Header />
-                <NamePlate />
+                <NamePlate theme={this.props.theme} />
             </div>
         )
     }
