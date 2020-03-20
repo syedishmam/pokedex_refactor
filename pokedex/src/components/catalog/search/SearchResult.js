@@ -22,7 +22,6 @@ class SearchResult extends React.Component {
     renderTypes() {
         const orderedTypes = this.props.orderTypesAndStore(this.props.pokemonTypes, this.props.storePokemonTypes);
         this.props.updateTheme(orderedTypes, this.props.changeTheme);
-        let textColor = {color: this.props.themeColor};
         if(orderedTypes.length === 2) {
             return (
                 <div>
