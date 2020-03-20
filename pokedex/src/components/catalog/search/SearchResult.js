@@ -3,18 +3,11 @@ import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
 
 import {storePokemonDescEnglish, storePokemonTypes, changeTheme} from '../../../actions/index.js';
-import {capitalizeFirstChar} from '../../../api/apiFunctions.js';
+import {capitalizeFirstChar, getEnglishPokemonDescription} from '../../../api/apiFunctions.js';
 
 import './styles/SearchResult.css';
 
 class SearchResult extends React.Component {
-
-    //Export english flavor text from array of descriptions in numerous languages
-    getEnglishPokemonDescription() {
-        const englishDesc = this.props.pokemonDescs.find(desc => desc.language.name === 'en');
-        this.props.storePokemonDescEnglish(englishDesc.flavor_text);
-        return englishDesc.flavor_text;
-    }
 
     //Puts pokemon types in order of importance
     //Changes theme color based on ordered types
@@ -45,7 +38,7 @@ class SearchResult extends React.Component {
                 <div id="infoCard">
                     <h3 id="pokemonName">{capitalizeFirstChar(this.props.search.species.name)}</h3>
                     {this.renderTypes()}
-                    <p className="description">{this.getEnglishPokemonDescription()}</p>
+                    <p className="description">{getEnglishPokemonDescription(this.props.pokemonDescs, this.props.storePokemonDescEnglish)}</p>
                     <h3 id="moreInfoBanner">Click For More Info</h3>
                 </div>
             </div>

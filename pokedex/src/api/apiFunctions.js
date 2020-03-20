@@ -36,3 +36,10 @@ export function capitalizeFirstChar(pokemon) {
     const capitalize = pokemon.substring(0, 1).toUpperCase().concat(pokemon.substring(1));
     return capitalize;
 }
+
+//Export english flavor text from array of descriptions in numerous languages
+export function getEnglishPokemonDescription(descs, storeDesc) {
+        const englishDesc = descs.find(desc => desc.language.name === 'en');
+        storeDesc(englishDesc.flavor_text);
+        return englishDesc.flavor_text;
+}
