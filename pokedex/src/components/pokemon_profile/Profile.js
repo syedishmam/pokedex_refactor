@@ -17,9 +17,11 @@ class Profile extends React.Component {
     }
 
     renderProfile() {
+        let themeColor = {backgroundColor: this.props.themeColor};
+
         if(this.props.pokemonData) {
             return (
-                <div>
+                <div style={themeColor}>
                     <GenInfo theme={this.props.themeColor}/>
                     <DetailedInfo theme={this.props.themeColor}/>
                 </div>
