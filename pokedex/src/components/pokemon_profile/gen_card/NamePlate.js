@@ -25,17 +25,16 @@ class NamePlate extends React.Component {
 
     renderTypes() {
         const types = this.props.pokemonTypes;
-        let textColor = {color: this.props.theme};
         if(types.length === 2) {
             return (
                 <div>
-                    <p style={textColor} className="typeCell">{types[0]}</p>
-                    <p style={textColor} className="typeCell">{types[1]}</p>
+                    <p className="typeCell">{types[0]}</p>
+                    <p className="typeCell">{types[1]}</p>
                 </div>
             )
         } else {
             return (
-                <p style={textColor} className="typeCell">{types[0]}</p>
+                <p className="typeCell">{types[0]}</p>
             )
         }
     }

@@ -9,10 +9,12 @@
     margin: 0px 2px 0px 2px; 
     padding: 5px 10px;
     border-radius: 10px;
-    background-color: whitesmoke;
+    border: 1px solid whitesmoke;
+    background-color: transparent;
     display: inline-block;
     text-shadow: none;
     font-weight: bold;
+    font-size: 85%;
 }
 
 /* ID Styles */
