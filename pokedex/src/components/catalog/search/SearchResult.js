@@ -26,13 +26,13 @@ class SearchResult extends React.Component {
         if(orderedTypes.length === 2) {
             return (
                 <div>
-                    <p style={textColor} className="type">{orderedTypes[0]}</p>
-                    <p style={textColor} className="type">{orderedTypes[1]}</p>
+                    <p className="type">{orderedTypes[0]}</p>
+                    <p className="type">{orderedTypes[1]}</p>
                 </div>
             )
         } else {
             return (
-                <p style={textColor} className="type">{orderedTypes[0]}</p>
+                <p className="type">{orderedTypes[0]}</p>
             )
         }
     }

@@ -28,13 +28,13 @@ class NamePlate extends React.Component {
         if(types.length === 2) {
             return (
                 <div>
-                    <p className="typeCell">{types[0]}</p>
-                    <p className="typeCell">{types[1]}</p>
+                    <p className="type">{types[0]}</p>
+                    <p className="type">{types[1]}</p>
                 </div>
             )
         } else {
             return (
-                <p className="typeCell">{types[0]}</p>
+                <p className="type">{types[0]}</p>
             )
         }
     }
