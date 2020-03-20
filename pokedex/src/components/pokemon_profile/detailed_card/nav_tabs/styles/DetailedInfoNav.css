@@ -3,6 +3,10 @@
  .detailedInfoNavButton {
      margin: 0 0px 0 0px;
      width: 88.5px;
+     height: 40px;
+     background-color: transparent;
+     border: none;
+     font-size: 95%;
  }
 
 /* ID Styles */
