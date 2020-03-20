@@ -8,10 +8,8 @@ import './styles/GenInfo.css';
 class GenInfo extends React.Component {
 
     renderComponents() {
-        let themeColor = {backgroundColor: this.props.theme};
-
         return (
-            <div style={themeColor} id="generalInfoContainer">
+            <div id="generalInfoContainer">
                 <Header />
                 <NamePlate theme={this.props.theme} />
             </div>
