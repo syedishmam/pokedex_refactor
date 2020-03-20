@@ -6,7 +6,7 @@ class About extends React.Component {
     render() {
         return (
             <div>
-                <p>{this.props.pokemonDesc}</p>
+                <p id="description">{this.props.pokemonDesc}</p>
             </div>
         ) 
     }
