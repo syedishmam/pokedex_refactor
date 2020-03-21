@@ -1,12 +1,12 @@
 /* Class Styles */ 
 
  .detailedInfoNavButton {
-     margin: 0 0px 0 0px;
-     width: 88.5px;
+     padding: 0 13px 0 13px;
      height: 40px;
      background-color: transparent;
      border: none;
-     font-size: 95%;
+     font-size: 100%;
+     font-weight: bold;
  }
 
 /* ID Styles */
