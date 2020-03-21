@@ -7,11 +7,10 @@ class About extends React.Component {
         return (
             <div>
                 <p id="description">{this.props.pokemonDesc}</p>
-                <h3>Details:</h3>
             </div>
         ) 
     }
-    
+
 }
 
 const mapStateToProps = (state) => {

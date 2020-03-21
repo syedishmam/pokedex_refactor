@@ -7,7 +7,7 @@ import './styles/DetailedInfoNav.css';
 class DetailedInfoNav extends React.Component {
 
     state = {
-        abtBorder: {borderBottom: "solid 3px gray"},
+        abtBorder: {borderBottom: "solid 3px blue"},
         statBorder: {borderBottom: "solid 3px gray"},
         evoBorder: {borderBottom: "solid 3px gray"},
         moveBorder: {borderBottom: "solid 3px gray"}
