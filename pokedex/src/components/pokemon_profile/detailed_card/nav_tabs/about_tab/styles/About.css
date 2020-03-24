@@ -1,0 +1,24 @@
+/* --- ID Styles --- */
+
+#measurementsHeading {
+    text-align: center;
+    font-size: 100%;
+}
+
+.floatingBox {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px;
+    font-size: 90%;
+    box-shadow: 0 0 4px 2px rgba(0, 0, 0, 0.3);
+}
+
+#height {
+    display: inline-block;
+ 
+}
+
+#weight {
+    display: inline-block;
+
+}
