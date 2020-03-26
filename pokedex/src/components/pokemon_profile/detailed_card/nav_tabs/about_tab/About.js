@@ -5,6 +5,25 @@ import './styles/About.css';
 
 class About extends React.Component {
 
+    formatGrowthRate(growthRate) {
+        let formattedGrowthRate = growthRate.split('-', 2)[0];
+        return formattedGrowthRate.charAt(0).toUpperCase() + formattedGrowthRate.slice(1);
+    }
+
+    convertHeight(height) {
+        const cm = height * 10;
+        var realFeet = ((cm*0.393700) / 12);
+        var feet = Math.floor(realFeet);
+        var inches = Math.round((realFeet - feet) * 12);
+        return "Height: " + feet + "'" + inches + ' (' + cm + 'cm)';
+    }
+
+    convertWeight(weight) {
+        const kg = weight / 10;
+        const lbs = Math.round(kg * 2.20462);
+        return "Weight: " + lbs + "lbs (" + kg + "kg)";
+    }
+
     render() {
         return (
             <span>
@@ -15,8 +34,8 @@ class About extends React.Component {
                     <table>
                             <tbody>
                                 <tr>
-                                    <td className="infoBoxStatCell">Height: 5'7(170cm)</td>
-                                    <td className="infoBoxStatCell">Weight: 200bs(90.5kg)</td>
+                                    <td className="infoBoxStatCell">{this.convertHeight(this.props.pokemonHeight)}</td>
+                                    <td className="infoBoxStatCell">{this.convertWeight(this.props.pokemonWeight)}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -26,8 +45,8 @@ class About extends React.Component {
                         <table>
                             <tbody>
                                 <tr>
-                                    <td className="infoBoxStatCell">Growth Rate: 50</td>
-                                    <td className="infoBoxStatCell">Capture Rate: 50</td>
+                                    <td className="infoBoxStatCell">Growth Rate: {this.formatGrowthRate(this.props.pokemonGrowthRate)}</td>
+                                    <td className="infoBoxStatCell">Capture Rate: {this.props.pokemonCaptureRate}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -41,7 +60,11 @@ class About extends React.Component {
 
 const mapStateToProps = (state) => {
     return {
-        pokemonDesc: state.pokemonData.pokemonDesc
+        pokemonDesc: state.pokemonData.pokemonDesc,
+        pokemonCaptureRate: state.pokemonData.speciesData.capture_rate,
+        pokemonGrowthRate: state.pokemonData.speciesData.growth_rate.name,
+        pokemonHeight: state.pokemonData.data.height,
+        pokemonWeight: state.pokemonData.data.weight
     }
 }
 
