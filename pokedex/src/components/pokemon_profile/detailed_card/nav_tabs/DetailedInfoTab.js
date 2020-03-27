@@ -1,8 +1,8 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import About from './about_tab/About.js';
-import BaseStats from './base_stats_tab/BaseStats.js';
+import About from './About.js'
+import BaseStats from './BaseStats.js';
 
 import './styles/DetailedInfoTab.css';
 
