@@ -4,6 +4,30 @@
   margin-top: 10px;
 }
 
+#hpBar {
+    background-color: #6EEB83;
+}
+
+#atkBar {
+    background-color: #FF3C38;
+}
+
+#defBar {
+    background-color: #6699CC;
+}
+
+#spAtkBar {
+    background-color: #A23E48;
+}
+
+#spDefBar {
+    background-color: purple;
+}
+
+#spdBar {
+    background-color: #F0F66E;
+}
+
 /* --- Class Styles --- */
 
 .statName {
@@ -32,5 +56,5 @@
     height: 6px;
     width: 50%;
     border-radius: 10px;
-    background-color: red;
+    background-color: black;
 }

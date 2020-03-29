@@ -80,7 +80,7 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.HP}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.hpProgressBarWidth}></div>
+                                <div id="hpBar" className="progressBarFill" style={progressBarFill.hpProgressBarWidth}></div>
                             </div>
                         </td>
                     </tr>
@@ -89,16 +89,7 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.Atk}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.atkProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Defense</td>
-                        <td className="statInteger">{integerStats.Def}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.defProgressBarWidth}></div>
+                                <div id="atkBar" className="progressBarFill" style={progressBarFill.atkProgressBarWidth}></div>
                             </div>
                         </td>
                     </tr>
@@ -107,7 +98,16 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.SpAtk}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.spAtkProgressBarWidth}></div>
+                                <div id="spAtkBar" className="progressBarFill" style={progressBarFill.spAtkProgressBarWidth}></div>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td className="statName">Defense</td>
+                        <td className="statInteger">{integerStats.Def}</td>
+                        <td className="progressBarContainer">
+                            <div className="progressBarEmpty">
+                                <div id="defBar" className="progressBarFill" style={progressBarFill.defProgressBarWidth}></div>
                             </div>
                         </td>
                     </tr>
@@ -116,7 +116,7 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.SpDef}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.spDefProgressBarWidth}></div>
+                                <div id="spDefBar" className="progressBarFill" style={progressBarFill.spDefProgressBarWidth}></div>
                             </div>
                         </td>
                     </tr>
@@ -125,7 +125,7 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.Spd}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill" style={progressBarFill.spdProgressBarWidth}></div>
+                                <div id="spdBar" className="progressBarFill" style={progressBarFill.spdProgressBarWidth}></div>
                             </div>
                         </td>
                     </tr>
@@ -134,7 +134,7 @@ class BaseStats extends React.Component {
                         <td className="statInteger">{integerStats.Tot}</td>
                         <td className="progressBarContainer">
                             <div className="progressBarEmpty">
-                                <div className="progressBarFill"></div>
+                                <div id="totBar" className="progressBarFill"></div>
                             </div>
                         </td>
                     </tr>
