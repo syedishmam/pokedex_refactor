@@ -8,9 +8,9 @@ class DetailedInfoNav extends React.Component {
 
     state = {
         abtBorder: {borderBottom: "solid 3px blue"},
-        statBorder: {borderBottom: "solid 3px gray"},
-        evoBorder: {borderBottom: "solid 3px gray"},
-        moveBorder: {borderBottom: "solid 3px gray"}
+        statBorder: {borderBottom: "solid 3px lightgrey"},
+        evoBorder: {borderBottom: "solid 3px lightgrey"},
+        moveBorder: {borderBottom: "solid 3px lightgrey"}
     }
 
     navButtonClick(tabName) {
@@ -19,38 +19,38 @@ class DetailedInfoNav extends React.Component {
                 this.props.displayAbout('about');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px blue"},
-                    statBorder: {borderBottom: "solid 3px gray"},
-                    evoBorder: {borderBottom: "solid 3px gray"},
-                    moveBorder: {borderBottom: "solid 3px gray"}
+                    statBorder: {borderBottom: "solid 3px lightgrey"},
+                    evoBorder: {borderBottom: "solid 3px lightgrey"},
+                    moveBorder: {borderBottom: "solid 3px lightgrey"}
                 });
                 break;
 
             case "base_stats":
                 this.props.displayAbout('base_stats');
                 this.setState({
-                    abtBorder: {borderBottom: "solid 3px gray"},
+                    abtBorder: {borderBottom: "solid 3px lightgrey"},
                     statBorder: {borderBottom: "solid 3px blue"},
-                    evoBorder: {borderBottom: "solid 3px gray"},
-                    moveBorder: {borderBottom: "solid 3px gray"}
+                    evoBorder: {borderBottom: "solid 3px lightgrey"},
+                    moveBorder: {borderBottom: "solid 3px lightgrey"}
                 });
                 break;
 
             case "evolution":
                 this.props.displayAbout('evolution');
                 this.setState({
-                    abtBorder: {borderBottom: "solid 3px gray"},
-                    statBorder: {borderBottom: "solid 3px gray"},
+                    abtBorder: {borderBottom: "solid 3px lightgrey"},
+                    statBorder: {borderBottom: "solid 3px lightgrey"},
                     evoBorder: {borderBottom: "solid 3px blue"},
-                    moveBorder: {borderBottom: "solid 3px gray"}
+                    moveBorder: {borderBottom: "solid 3px lightgrey"}
                 });
                 break;
 
             case "moves":
                 this.props.displayAbout('moves');
                 this.setState({
-                    abtBorder: {borderBottom: "solid 3px gray"},
-                    statBorder: {borderBottom: "solid 3px gray"},
-                    evoBorder: {borderBottom: "solid 3px gray"},
+                    abtBorder: {borderBottom: "solid 3px lightgrey"},
+                    statBorder: {borderBottom: "solid 3px lightgrey"},
+                    evoBorder: {borderBottom: "solid 3px lightgrey"},
                     moveBorder: {borderBottom: "solid 3px blue"}
                 });
                 break;
