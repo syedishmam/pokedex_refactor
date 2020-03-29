@@ -61,3 +61,12 @@ export const changeTheme = (theme) => {
         payload: theme
     }
 }
+
+/* --- Stats --- */
+
+export const storeStats = (stats) => {
+    return {
+        type: 'STORE_STATS',
+        payload: stats
+    }
+}

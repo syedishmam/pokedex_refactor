@@ -1,27 +1,13 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
+import {storeStats} from '../../../../actions/index.js';
+
 import './styles/BaseStats.css';
 
 class BaseStats extends React.Component {
 
-    //Need to move component state to redux state
-
-    state = {
-        stats: null,
-        hpProgressFill: null,
-        AtkProgressFill: null,
-        DefProgressFill: null,
-        SpAtkProgressFill: null,
-        SpDefProgressFill: null,
-        SpdProgressFill: null
-    }
-
-    componentDidMount() {
-        this.storeStats(this.props.pokemonStats);
-    }
-
-    storeStats(pokemonStats) {
+    compileStats(pokemonStats) {
         let statsObj = {
             HP: pokemonStats[5].base_stat,
             Atk: pokemonStats[4].base_stat,
@@ -31,11 +17,10 @@ class BaseStats extends React.Component {
             Spd: pokemonStats[0].base_stat,
             Tot: null
         } 
-        //Add up base stats for total
         statsObj.Tot = statsObj.HP + statsObj.Atk + statsObj.Def + statsObj.SpAtk + statsObj.SpDef + statsObj.Spd;
-        this.setState({stats: statsObj})
-        this.calculateStatRelativeStrength(statsObj);
-        return statsObj;
+
+        const relativeStatStrength = this.calculateStatRelativeStrength(statsObj);
+        this.props.storeStats({integerStats: statsObj, relativeStats: relativeStatStrength});
     }
 
     calculateStatRelativeStrength(pokemonStatsObj) {
@@ -46,21 +31,23 @@ class BaseStats extends React.Component {
         const MAX_SP_DEF = 230;
         const MAX_SPD = 180;
 
-        const relativeHP = pokemonStatsObj.HP / MAX_HP * 10;
-        const relativeAtk = pokemonStatsObj.Atk / MAX_ATK * 10;
-        const relativeDef = pokemonStatsObj.Def / MAX_DEF * 10;
-        const relativeSpAtk = pokemonStatsObj.SpAtk / MAX_SP_ATK * 10;
-        const relativeSpDef = pokemonStatsObj.SpDef / MAX_SP_DEF * 10;
-        const relativeSpd = pokemonStatsObj.Spd / MAX_SPD * 10;
+        const relativeHP = Math.round(pokemonStatsObj.HP / MAX_HP * 100);
+        const relativeAtk = Math.round(pokemonStatsObj.Atk / MAX_ATK * 100);
+        const relativeDef = Math.round(pokemonStatsObj.Def / MAX_DEF * 100);
+        const relativeSpAtk = Math.round(pokemonStatsObj.SpAtk / MAX_SP_ATK * 100);
+        const relativeSpDef = Math.round(pokemonStatsObj.SpDef / MAX_SP_DEF * 100);
+        const relativeSpd = Math.round(pokemonStatsObj.Spd / MAX_SPD * 100);
 
-        this.setState({
+        const relativeStatStrength = {
             hpProgressFill: relativeHP,
             AtkProgressFill: relativeAtk,
             DefProgressFill: relativeDef,
             SpAtkProgressFill: relativeSpAtk,
             SpDefProgressFill: relativeSpDef,
             SpdProgressFill: relativeSpd
-        })
+        };
+
+        return relativeStatStrength;
     }
 
     renderStats(pokemonStats) {
@@ -138,7 +125,7 @@ class BaseStats extends React.Component {
     render() {
         return(
             <div>
-                {this.renderStats(this.props.pokemonStats)}
+                {this.compileStats(this.props.pokemonStats)}
             </div>
         )
     }
@@ -150,4 +137,4 @@ const mapStateToProps = (state) => {
     }
 }
 
-export default connect(mapStateToProps)(BaseStats);
+export default connect(mapStateToProps, {storeStats})(BaseStats);
