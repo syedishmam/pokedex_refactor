@@ -6,6 +6,12 @@ import './styles/DetailedInfoNav.css';
 
 class DetailedInfoNav extends React.Component {
 
+    /*TODO:
+        - BUG: When user selects tab other than About and backs out into Catalog 
+               and reclicks searched pokemon, the nav selector shows About but
+               what is shown below is the last tab viewed.
+    */
+
     state = {
         abtBorder: {borderBottom: "solid 3px #00A7E1", color: "black"},
         statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
