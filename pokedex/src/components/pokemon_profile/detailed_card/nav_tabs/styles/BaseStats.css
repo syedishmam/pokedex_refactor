@@ -1,32 +1,35 @@
 /* --- ID Styles --- */
 
 #statsTable {
-  
+  margin-top: 10px;
 }
 
 /* --- Class Styles --- */
 
 .statName {
-    padding: 5px 7.5px 5px 0px;
+    padding: 7.5px 30px 7.5px 0px;
+    color: gray;
 }
 
 .statInteger {
-
+    padding-right: 15px;
+    text-align: center;
+    font-weight: bold;
 }
 
 .progressBarContainer {
-    padding-left: 7.5px;
+    padding-left: 0px;
 }
 
 .progressBarEmpty {
-    height: 7.5px;
-    width: 248.5px;
+    height: 6px;
+    width: 214px;
     border-radius: 10px;
     background-color: lightgrey;
 }
 
 .progressBarFill {
-    height: 7.5px;
+    height: 6px;
     width: 50%;
     border-radius: 10px;
     background-color: red;
