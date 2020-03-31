@@ -34,35 +34,40 @@
 
 #totalProgressBar {
     margin: auto;
-    height: 12px;
-    width: 350px;
-    border-radius: 10px;
-    background-color: lightgrey;
+    height: 30px;
+    width: 351px;
+}
+
+#totalProgressBar div {
+    padding: 0;
+    margin: 0;
+    
 }
 
 #hpShare {
-    background-color: purple;
+    background-color: #6EEB83;
     border-radius: 10px 0 0 10px;
 }
 
 #atkShare {
-    background-color: orange;
+    margin-left: 0;
+    background-color: #FF3C38;
 }
 
 #spAtkShare {
-    background-color: red;
+    background-color: #A23E48;
 }
 
 #defShare {
-    background-color: yellow;
+    background-color: #6699CC;
 }
 
 #spDefShare {
-    background-color: green;
+    background-color: purple;
 }
 
 #spdShare {
-    background-color: blue;
+    background-color: #F0F66E;
     border-radius: 0 10px 10px 0;
 }
 
