@@ -1,7 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
 
-import {displayAbout, displayBaseStats, displayEvolution, displayMoves} from '../../../../actions';
+import {displayTab} from '../../../../actions';
 import './styles/DetailedInfoNav.css';
 
 class DetailedInfoNav extends React.Component {
@@ -22,7 +22,7 @@ class DetailedInfoNav extends React.Component {
     navButtonClick(tabName) {
         switch(tabName) {
             case "about":
-                this.props.displayAbout('about');
+                this.props.displayTab('about');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px blue", color: "black"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
@@ -32,7 +32,7 @@ class DetailedInfoNav extends React.Component {
                 break;
 
             case "base_stats":
-                this.props.displayAbout('base_stats');
+                this.props.displayTab('base_stats');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     statBorder: {borderBottom: "solid 3px blue", color: "black"},
@@ -42,7 +42,7 @@ class DetailedInfoNav extends React.Component {
                 break;
 
             case "evolution":
-                this.props.displayAbout('evolution');
+                this.props.displayTab('evolution');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
@@ -52,7 +52,7 @@ class DetailedInfoNav extends React.Component {
                 break;
 
             case "moves":
-                this.props.displayAbout('moves');
+                this.props.displayTab('moves');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
@@ -79,4 +79,4 @@ class DetailedInfoNav extends React.Component {
     }
 }
 
-export default connect(null, {displayAbout, displayBaseStats, displayEvolution, displayMoves})(DetailedInfoNav);
+export default connect(null, {displayTab})(DetailedInfoNav);
