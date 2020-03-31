@@ -24,7 +24,8 @@ class BaseStats extends React.Component {
         statInts.Tot = statInts.HP + statInts.Atk + statInts.Def + statInts.SpAtk + statInts.SpDef + statInts.Spd;
 
         const relativeStatStrength = this.calculateStatRelativeStrength(statInts);
-        this.props.storeStats({integerStats: statInts, relativeStats: relativeStatStrength});
+        const statBreakdown = this.statBreakdown(statInts);
+        this.props.storeStats({integerStats: statInts, relativeStats: relativeStatStrength, breakdownStats: statBreakdown});
     }
 
     /*
@@ -57,6 +58,20 @@ class BaseStats extends React.Component {
         };
 
         return stats;
+    }
+
+    statBreakdown(stats) {
+        const total = stats.Tot;
+        const statBreakdown = {
+            hpShare: Math.floor(stats.HP / total * 100) + '%',
+            AtkShare: Math.floor(stats.Atk / total * 100) + '%',  
+            DefShare: Math.floor(stats.Def / total * 100) + '%', 
+            SpAtkShare: Math.floor(stats.SpAtk / total * 100) + '%', 
+            SpDefShare: Math.floor(stats.SpDef / total * 100) + '%', 
+            SpdShare: Math.floor(stats.Spd / total * 100) + '%'
+        }
+
+        return statBreakdown;
     }
 
     renderStats() {

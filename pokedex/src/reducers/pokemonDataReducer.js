@@ -1,7 +1,7 @@
 export default (state = {
     data: '', 
     speciesData: '', 
-    pokemonStats: {statIntegers: '', statRelativeStrength: ''},
+    pokemonStats: {statIntegers: '', statRelativeStrength: '', statTotalBreakdown: ''},
     pokemonDesc : '', 
     types: {}
 }, action) => {
@@ -17,7 +17,7 @@ export default (state = {
             return {...state, types: action.payload}
 
         case 'STORE_STATS': 
-            return {...state, pokemonStats: {statIntegers: action.payload.integerStats, statRelativeStrength: action.payload.relativeStats}}
+            return {...state, pokemonStats: {statIntegers: action.payload.integerStats, statRelativeStrength: action.payload.relativeStats, statTotalBreakdown: action.payload.breakdownStats}}
 
         default:
             return state
