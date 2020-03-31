@@ -28,6 +28,48 @@
     background-color: #F0F66E;
 }
 
+#totalContainer {
+    text-align: center;
+}
+
+#totalProgressBar {
+    margin: auto;
+    height: 12px;
+    width: 350px;
+    border-radius: 10px;
+    background-color: lightgrey;
+}
+
+#hpShare {
+    background-color: purple;
+    border-radius: 10px 0 0 10px;
+}
+
+#atkShare {
+    background-color: orange;
+}
+
+#spAtkShare {
+    background-color: red;
+}
+
+#defShare {
+    background-color: yellow;
+}
+
+#spDefShare {
+    background-color: green;
+}
+
+#spdShare {
+    background-color: blue;
+    border-radius: 0 10px 10px 0;
+}
+
+
+
+
+
 /* --- Class Styles --- */
 
 .statName {
@@ -54,7 +96,11 @@
 
 .progressBarFill {
     height: 6px;
-    width: 50%;
     border-radius: 10px;
+}
+
+.totalProgressBarFill {
+    height: 12px;
     background-color: black;
+    display: inline-block;
 }

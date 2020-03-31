@@ -60,15 +60,16 @@ class BaseStats extends React.Component {
         return stats;
     }
 
+    //Find each stat's share of the integer total of all stats
     statBreakdown(stats) {
         const total = stats.Tot;
         const statBreakdown = {
-            hpShare: Math.floor(stats.HP / total * 100) + '%',
-            AtkShare: Math.floor(stats.Atk / total * 100) + '%',  
-            DefShare: Math.floor(stats.Def / total * 100) + '%', 
-            SpAtkShare: Math.floor(stats.SpAtk / total * 100) + '%', 
-            SpDefShare: Math.floor(stats.SpDef / total * 100) + '%', 
-            SpdShare: Math.floor(stats.Spd / total * 100) + '%'
+            hpShare: Math.floor(stats.HP / total * 100),
+            atkShare: Math.floor(stats.Atk / total * 100),  
+            defShare: Math.floor(stats.Def / total * 100), 
+            spAtkShare: Math.floor(stats.SpAtk / total * 100), 
+            spDefShare: Math.floor(stats.SpDef / total * 100), 
+            spdShare: Math.floor(stats.Spd / total * 100)
         }
 
         return statBreakdown;
@@ -77,6 +78,7 @@ class BaseStats extends React.Component {
     renderStats() {
         const integerStats = this.props.pokemonStatsComposed.statIntegers;
         const progressBarStats = this.props.pokemonStatsComposed.statRelativeStrength;
+        const totalBarStats = this.props.pokemonStatsComposed.statTotalBreakdown;
 
         const progressBarFill = {
             hpProgressBarWidth: {width: progressBarStats.HP + '%'},
@@ -87,74 +89,89 @@ class BaseStats extends React.Component {
             spdProgressBarWidth: {width: progressBarStats.Spd + '%'}
         }
 
+        const totalBarFill = {
+            hpShare: {width: totalBarStats.hpShare + '%'},
+            atkShare: {width: totalBarStats.atkShare + '%'},
+            spAtkShare: {width: totalBarStats.spAtkShare + '%'},
+            defShare: {width: totalBarStats.defShare + '%'},
+            spDefShare: {width: totalBarStats.spDefShare + '%'},
+            spdShare: {width: totalBarStats.spdShare + '%'}
+        }
+
+        console.log(totalBarFill);
+
         return (
-            <table id="statsTable">
-                <tbody>
-                    <tr>
-                        <td className="statName">HP</td>
-                        <td className="statInteger">{integerStats.HP}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="hpBar" className="progressBarFill" style={progressBarFill.hpProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Attack</td>
-                        <td className="statInteger">{integerStats.Atk}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="atkBar" className="progressBarFill" style={progressBarFill.atkProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Sp. Atk</td>
-                        <td className="statInteger">{integerStats.SpAtk}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="spAtkBar" className="progressBarFill" style={progressBarFill.spAtkProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Defense</td>
-                        <td className="statInteger">{integerStats.Def}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="defBar" className="progressBarFill" style={progressBarFill.defProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Sp. Def</td>
-                        <td className="statInteger">{integerStats.SpDef}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="spDefBar" className="progressBarFill" style={progressBarFill.spDefProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Speed</td>
-                        <td className="statInteger">{integerStats.Spd}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="spdBar" className="progressBarFill" style={progressBarFill.spdProgressBarWidth}></div>
-                            </div>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td className="statName">Total</td>
-                        <td className="statInteger">{integerStats.Tot}</td>
-                        <td className="progressBarContainer">
-                            <div className="progressBarEmpty">
-                                <div id="totBar" className="progressBarFill"></div>
-                            </div>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div id="baseStatsContainer">
+                <table id="statsTable">
+                    <tbody>
+                        <tr>
+                            <td className="statName">HP</td>
+                            <td className="statInteger">{integerStats.HP}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="hpBar" className="progressBarFill" style={progressBarFill.hpProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="statName">Attack</td>
+                            <td className="statInteger">{integerStats.Atk}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="atkBar" className="progressBarFill" style={progressBarFill.atkProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="statName">Sp. Atk</td>
+                            <td className="statInteger">{integerStats.SpAtk}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="spAtkBar" className="progressBarFill" style={progressBarFill.spAtkProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="statName">Defense</td>
+                            <td className="statInteger">{integerStats.Def}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="defBar" className="progressBarFill" style={progressBarFill.defProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="statName">Sp. Def</td>
+                            <td className="statInteger">{integerStats.SpDef}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="spDefBar" className="progressBarFill" style={progressBarFill.spDefProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td className="statName">Speed</td>
+                            <td className="statInteger">{integerStats.Spd}</td>
+                            <td className="progressBarContainer">
+                                <div className="progressBarEmpty">
+                                    <div id="spdBar" className="progressBarFill" style={progressBarFill.spdProgressBarWidth}></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="totalContainer">
+                    <h3 id="totalSubHeader">Total: 500</h3>
+                    <div id="totalProgressBar">
+                        <div id="hpShare" className="totalProgressBarFill" style={totalBarFill.hpShare}></div>
+                        <div id="atkShare" className="totalProgressBarFill" style={totalBarFill.atkShare}></div>
+                        <div id="spAtkShare" className="totalProgressBarFill" style={totalBarFill.spAtkShare}></div>
+                        <div id="defShare" className="totalProgressBarFill" style={totalBarFill.defShare}></div>
+                        <div id="spDefShare" className="totalProgressBarFill" style={totalBarFill.spDefShare}></div>
+                        <div id="spdShare" className="totalProgressBarFill" style={totalBarFill.spdShare}></div>
+                    </div>
+                </div>
+            </div>
         )
     }
 
