@@ -24,7 +24,7 @@ class DetailedInfoNav extends React.Component {
             case "about":
                 this.props.displayTab('about');
                 this.setState({
-                    abtBorder: {borderBottom: "solid 3px blue", color: "black"},
+                    abtBorder: {borderBottom: "solid 3px #00A7E1", color: "black"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     evoBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     moveBorder: {borderBottom: "solid 3px lightgrey", color: "grey"}
@@ -35,7 +35,7 @@ class DetailedInfoNav extends React.Component {
                 this.props.displayTab('base_stats');
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
-                    statBorder: {borderBottom: "solid 3px blue", color: "black"},
+                    statBorder: {borderBottom: "solid 3px #00A7E1", color: "black"},
                     evoBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     moveBorder: {borderBottom: "solid 3px lightgrey", color: "grey"}
                 });
@@ -46,7 +46,7 @@ class DetailedInfoNav extends React.Component {
                 this.setState({
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
-                    evoBorder: {borderBottom: "solid 3px blue", color: "black"},
+                    evoBorder: {borderBottom: "solid 3px #00A7E1", color: "black"},
                     moveBorder: {borderBottom: "solid 3px lightgrey", color: "grey"}
                 });
                 break;
@@ -57,7 +57,7 @@ class DetailedInfoNav extends React.Component {
                     abtBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     statBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
                     evoBorder: {borderBottom: "solid 3px lightgrey", color: "grey"},
-                    moveBorder: {borderBottom: "solid 3px blue", color: "black"}
+                    moveBorder: {borderBottom: "solid 3px #00A7E1", color: "black"}
                 });
                 break;
 
