@@ -161,7 +161,7 @@ class BaseStats extends React.Component {
                     </tbody>
                 </table>
                 <div id="totalContainer">
-                    <h3 id="totalSubHeader">Total: 500</h3>
+                    <h3 id="totalSubHeader">Total: {integerStats.Tot}</h3>
                     <div id="totalProgressBar">
                         <div id="hpShare" className="totalProgressBarFill" style={totalBarFill.hpShare}></div>
                         <div id="atkShare" className="totalProgressBarFill" style={totalBarFill.atkShare}></div>

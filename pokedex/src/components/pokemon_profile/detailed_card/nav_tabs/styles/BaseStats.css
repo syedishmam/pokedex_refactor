@@ -32,6 +32,10 @@
     text-align: center;
 }
 
+#totalSubHeader {
+    margin-bottom: 10px;
+}
+
 #totalProgressBar {
     padding: 0;
     margin: auto;
